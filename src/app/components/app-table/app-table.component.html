@@ -1,0 +1,38 @@
+<div id="table-scroll" class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let header of tableHeaders">
+          {{ header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let userDetails of getCurrentPageRecords(); index as i">
+        <td *ngFor="let val of getValues(userDetails)">
+          {{ val }}
+        </td>
+        <td>
+          <button (click)="updateUserDetails?.emit(i)"> Update user details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="footer">
+  <div class="row-select">
+    Select Rows:
+    <select (change)="onRowSizeChange($event?.target?.value)">
+      <option value="10">10 rows</option>
+      <option value="25">25 rows</option>
+      <option value="50">50 rows</option>
+      <option value="100">100 rows</option>
+    </select>
+  </div>
+  <div class="pagination">
+    <button [disabled]="currentPage <= 0" (click)="firstPage()">❮❮</button>
+    <button [disabled]="currentPage == 0" (click)="prevPage()">❮</button>
+    <button [disabled]="currentPage >= (pages?.length - 1)" (click)="nextPage()">❯</button>
+    <button [disabled]="currentPage == pages?.length - 1" (click)="lastPage()">❯❯</button>
+  </div>
+</div>

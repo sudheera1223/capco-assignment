@@ -1,0 +1,6 @@
+<div>
+  <h3>Assignment</h3>
+  <app-table [tableHeaders]="tableHeaders" [userDetailsArray]="userDetailsArray | async"
+    (updateUserDetails)="updateUserDetails($event)">
+  </app-table>
+</div>

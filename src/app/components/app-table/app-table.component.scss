@@ -1,0 +1,63 @@
+.table-scroll {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin: auto;
+  overflow: auto;
+  height: 40vw;
+  table {
+    width: 100%;
+    min-width: 1280px;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+}
+
+.table-scroll {
+  th, td {
+    padding: 5px 10px;
+    border: 1px solid #000;
+    background: #fff;
+    vertical-align: top;
+  }
+  thead th, tfoot tr {
+    background: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.footer {
+  display: inline-flex;
+  justify-content: flex-end;
+  background-color: grey;
+  width: 100%;
+  .row-select{
+    display: inline-flex;
+    align-self: center;
+    padding-right: 20px;
+  }
+  .pagination {
+    display: inline-flex;
+    button {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      background-color: grey;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #ddd;
+      &:disabled{
+        color: lightgrey;
+        cursor: not-allowed;
+      }
+    }
+    a.active {
+      background-color: #4CAF50;
+      color: white;
+      border: 1
+    }
+  }
+}
